@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Slideshow from './components/Slideshow';
+import Confetti from "react-confetti";
+import { useWindowSize } from "@uidotdev/usehooks";
+import LoveLetter from './components/LoveLetter';
+
 
 function App() {
+  const { width, height } = useWindowSize();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Confetti width={width} height={height} />
+      <h1>Happy Birthday, Kaitlyn!!!💖</h1>
+      <p>I made you a little web site because you're amazing 💖</p>
+      <Slideshow />
+      <LoveLetter />
     </div>
   );
 }

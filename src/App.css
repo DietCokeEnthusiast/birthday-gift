@@ -1,5 +1,12 @@
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #ffe6f0; /* pastel pink */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .App-logo {
@@ -27,6 +34,18 @@
 .App-link {
   color: #61dafb;
 }
+h1 {
+  font-size: 2rem;
+  color: #d63384; /* berry pink */
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
 
 @keyframes App-logo-spin {
   from {
