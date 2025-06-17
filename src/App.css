@@ -1,12 +1,15 @@
 
 .App {
   min-height: 100vh;
+  max-width: 100vw;
   padding: 40px 20px;
   background: #ffe6f0; /* pastel pink */
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Segoe UI", sans-serif;
+  box-sizing: border-box;
+  overflow-x:hidden ;
 }
 
 .App-logo {

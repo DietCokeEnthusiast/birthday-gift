@@ -1,29 +1,60 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./LoveLetter.css";
+import { Typewriter } from "react-simple-typewriter";
 
-function LoveLetter() {
+const letterText = `Dear Kaitlyn,
+
+I wanted to give you something a little different for your birthday.
+A site made just for you — because you're one of a kind.
+
+Thank you for being the most beautiful part of my life. 💖
+
+Nathan
+`;
+
+export default function LoveLetter() {
   const [open, setOpen] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    let index = 0;
+    let currentText = "";
+
+    const typeNext = () => {
+      if (index < letterText.length) {
+        currentText += letterText[index];
+        setTypedText(currentText);
+        index++;
+
+        setTimeout(typeNext, 25);
+      }
+    };
+
+    typeNext();
+  }, [open]);
+
+  // 🔁 Scroll to bottom when typedText changes
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [typedText]);
 
   return (
-    <div className="envelope-container" onClick={() => setOpen(!open)}>
-      <div className={`envelope ${open ? "open" : ""}`}>
+    <div className="envelope-wrapper">
+      <div className={`envelope ${open ? "open" : ""}`} onClick={() => setOpen(true)}>
         <div className="flap" />
-        <div className="seal">💌 Click to open</div>
+        {!open && <div className="seal">💌 Tap to open</div>}
         <div className="letter">
-          <p>
-            Dear Kaitlyn,  
-            <br /><br />
-            I wanted to give you something a little different for your birthday.  
-            A site made just for you — because you're one of a kind.  
-            Thank you for being the most beautiful part of my life. 💖  
-            <br /><br />
-            Love,  
-            <br />Nathan
-          </p>
+          <div className="letter-content">
+            {typedText}
+            <span ref={scrollRef} />
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default LoveLetter;
