@@ -7,7 +7,7 @@ import "./Slideshow.css";
 const images = [
   "./images/bday1.jpeg",
   "./images/bday2.jpg",
-  "./images/bday3.png",
+  "./images/bday3.PNG",
   "./images/bday4.jpg",
   "./images/bday5.jpg",
   "./images/bday6.JPG",
