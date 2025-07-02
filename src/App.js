@@ -3,6 +3,7 @@ import Slideshow from './components/Slideshow';
 import Confetti from "react-confetti";
 import { useWindowSize } from "@uidotdev/usehooks";
 import LoveLetter from './components/LoveLetter';
+import Quiz from './components/Quiz';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <p>I made you a little web site because you're amazing 💖</p>
       <Slideshow />
       <LoveLetter />
+      <Quiz />
     </div>
   );
 }

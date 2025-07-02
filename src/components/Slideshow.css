@@ -33,9 +33,25 @@
   border-radius: 12px;
 }
 
-
+/* ✅ Mobile Fixes */
 @media (max-width: 600px) {
+  .slideshow-container {
+    max-width: 90vw;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .slide-wrapper {
+    height: auto;
+    padding: 10px;
+  }
+
   .slide-image {
-    max-height: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
   }
 }

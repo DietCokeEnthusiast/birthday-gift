@@ -5,11 +5,17 @@ import { Typewriter } from "react-simple-typewriter";
 const letterText = `Dear Kaitlyn,
 
 I wanted to give you something a little different for your birthday.
-A site made just for you — because you're one of a kind.
+A site made just for you, because you're one of a kind.
 
-Thank you for being the most beautiful part of my life. 💖
+You are my everything and I love you more every day.
 
-Nathan
+Thank you for being the most beautiful part of my life.
+I
+Love
+You
+💖
+
+-Nathan
 `;
 
 export default function LoveLetter() {
